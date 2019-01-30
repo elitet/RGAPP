@@ -273,6 +273,7 @@ Temporary Items
 # Cordova
 platforms/*
 *.xcuserdatad
+www/*
 
 # res
 resources/signing
