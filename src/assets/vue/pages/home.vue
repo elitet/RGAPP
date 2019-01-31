@@ -9,15 +9,15 @@ f7-page
       img.mt2(src='http://comu.com.br/app/rgconf/assets/img/b2.jpg' width='100%', alt='')
     br
     br
-    a.color-white.margin-top(link='/lineup/')
+    a.color-white.margin-top(href='/lineup/')
       img.mt2(src='http://comu.com.br/app/rgconf/assets/img/b4.jpg' width='100%', alt='')
     br
     br
-    a.color-white.margin-top(link='/notificacoes/')
+    a.color-white.margin-top(href='/notificacoes/')
       img.mt2(src='http://comu.com.br/app/rgconf/assets/img/b1.jpg' width='100%', alt='')
     br
     br
-    a.color-white.margin-top(link='/musicas/')
+    a.color-white.margin-top(href='/musicas/')
       img.mt2(src='http://comu.com.br/app/rgconf/assets/img/b3.jpg' width='100%', alt='')
     br
     br

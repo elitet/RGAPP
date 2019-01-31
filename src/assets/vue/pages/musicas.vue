@@ -1,40 +1,26 @@
 <template lang="pug">
-.page
-  .navbar.color-theme-black
-    .navbar-inner.sliding
-      .left
-        a.link.back(href='#')
-          i.icon.icon-back
-          span.ios-only Back
-      .title.M300 MÚSICAS
-  .page-content
-    // Content block
-    .block
-      a.color-white.margin-top.popup-open(href='#', data-popup='.popup-musicas')
-        img.mt2(src='http://comu.com.br/app/rgconf/assets/img/musica.jpg' width='100%', alt='')
-      br
-      br
-      a.color-white.margin-top.popup-open(href='#', data-popup='.popup-musicas')
-        img.mt2(src='http://comu.com.br/app/rgconf/assets/img/mountains.jpg' width='100%', alt='')
-      br
-      br
-      a.color-white.margin-top.popup-open(href='#', data-popup='.popup-musicas')
-        img.mt2(src='http://comu.com.br/app/rgconf/assets/img/musica.jpg' width='100%', alt='')
-      br
-      br
-  // MÚSICAS
-  .popup.popup-musicas.theme-dark
-    .navbar.color-theme-black
-      .navbar-inner
-        .left
-        .title.sliding.M900 Volto os meus olhos
-        .right
-          a.link.icon-only.popup-close(href='#')
-            i.icon.f7-icons.ios-only close
-            i.icon.material-icons.md-only close
-    .page.theme-dark
-      .block.RBLHT.F17
-        br
+f7-page
+  f7-navbar.color-black
+    .left
+      f7-link.link.back(href="/")
+        i.icon.icon-back
+    .title.M300 MÚSICAS
+      
+  f7-block
+    f7-link.color-white.popup-open(href='#', data-popup='.popup-musicas')
+      img.mt2(src='http://comu.com.br/app/rgconf/assets/img/musica.jpg' width='100%', alt='')
+    br
+    br
+
+  f7-popup.popup-musicas.theme-dark
+    f7-navbar.color-theme-black(inner=true)
+        f7-nav-left
+        f7-nav-title.M900 Volto os meus olhos
+        f7-nav-right
+          f7-link.link.icon-only.popup-close(href='#')
+            i.icon.material-icons close
+    f7-page.theme-dark
+      f7-block.RBLHT.F17
         strong Dunamis Movement 
         p
           | Teu abraço em meio 
@@ -102,7 +88,6 @@
         |             Queremos mais de ti, queremos mais de ti
         br
         p
-  // MÚSICAS
 
 </template>
 <script>
