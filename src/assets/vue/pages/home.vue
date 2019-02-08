@@ -5,24 +5,40 @@ f7-page
       img.mt2(src='http://comu.com.br/app/rgconf/assets/img/logo.svg' width='45%', alt='')
   
   f7-block
-    f7-link.color-white.margin-top(href='/horarios/')
-      img.mt2(src='http://comu.com.br/app/rgconf/assets/img/b2.jpg' width='100%', alt='')
-    br
-    br
-    a.color-white.margin-top(href='/lineup/')
-      img.mt2(src='http://comu.com.br/app/rgconf/assets/img/b4.jpg' width='100%', alt='')
-    br
-    br
-    a.color-white.margin-top(href='/notificacoes/')
-      img.mt2(src='http://comu.com.br/app/rgconf/assets/img/b1.jpg' width='100%', alt='')
-    br
-    br
-    a.color-white.margin-top(href='/musicas/')
-      img.mt2(src='http://comu.com.br/app/rgconf/assets/img/b3.jpg' width='100%', alt='')
+
+    //-ul(v-if="categories && categories.length")
+      //-li(v-for="category of categories")
+        //-p {{category.Titulo}}
+
+    f7-link.color-white.margin-top(v-bind:href="'/lineup/'+category.ID", v-if="categories && categories.length", v-for="category of categories")
+      img.mt2(v-bind:src="category.Imagem" width='100%', alt='')
     br
     br
 
 </template>
 <script>
-export default {};
+import axios from 'axios';
+export default {
+  data() {
+    return {
+      categories: [],
+      errors: []
+    }
+  },
+
+  // Fetches posts when the component is created.
+  created() {
+    axios.get('http://comu.com.br/app/rgconf/?acao=categorias')
+    .then(response => {
+      // JSON responses are automatically parsed.
+
+      console.log(response.data);
+
+      this.categories = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+  }
+};
 </script>

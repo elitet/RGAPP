@@ -27,5 +27,13 @@ f7-page
 
 </template>
 <script>
-export default {};
+export default {
+  created(){
+    let teste = this.$f7.views.main.router;
+    console.log(JSON.stringify(teste));
+    console.log(this.$f7.views.main.router.currentRoute);
+    //-this.$f7.views.main.router.currentRoute.params
+    //-this.$f7.dialog.alert(this.$f7.mainView);
+  }
+};
 </script>

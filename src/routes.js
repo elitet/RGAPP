@@ -9,19 +9,23 @@ import Sobre from './assets/vue/pages/sobre.vue';
 
 export default [{
     path: '/',
-    component: Home
+    component: Home,
+    name: 'Home'
   },
   {
     path: '/horarios/',
-    component: Horarios
+    component: Horarios,
+    name: 'Horarios'
   },
   {
-    path: ['/lineup/', '/lineup/:id'],
-    component: Lineup
+    path: '/lineup/:pag',
+    component: Lineup,
+    name: 'LINE UP'
   },
   {
     path: ['/musicas/', '/musicas/:id'],
-    component: Musicas
+    component: Musicas,
+    name: 'Musicas'
   },
   {
     path: '/Sobre/',
